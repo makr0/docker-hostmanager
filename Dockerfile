@@ -10,7 +10,8 @@ RUN apk add --no-update --no-cache \
 	php7 \
 	php7-cli \
 	php7-iconv \
-	php7-mbstring
+	php7-mbstring \
+	php7-json
 
 COPY --from=0 /app/ /usr/local/src/docker-hostmanager
 
