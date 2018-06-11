@@ -135,6 +135,9 @@ class Synchronizer
                 foreach (array_unique($aliases) as $alias) {
                     $hosts[] = $alias.'.'.$networkName;
                 }
+                if(!empty($container['Config']['Hostname'])) {
+                    $hosts[] = $container['Config']['Hostname'];
+                }
 
                 $lines[$ip] = sprintf('%s%s', isset($lines[$ip]) ? $lines[$ip].' ' : '', implode(' ', $hosts));
             }
